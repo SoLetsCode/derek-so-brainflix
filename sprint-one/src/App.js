@@ -2,7 +2,9 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-class App {
+//quick create component rcc + tab with ES7 React snippets (class component) rfc + tab for functional components
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
