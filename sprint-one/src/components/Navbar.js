@@ -32,7 +32,7 @@ class Navbar extends React.Component {
               src={uploadLogo}
               alt="plus symbol upload"
             />
-            Upload
+            UPLOAD
           </button>
           <img className="navbar__user-img" src={userLogo} alt="user logo" />
         </div>
