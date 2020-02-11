@@ -27,9 +27,14 @@ class Navbar extends React.Component {
         </form>
         <div className="navbar__button-user-container">
           <button className="navbar__search-button">
-            <img src={uploadLogo} alt="plus symbol upload" /> Upload
+            <img
+              className="navbar__upload-img"
+              src={uploadLogo}
+              alt="plus symbol upload"
+            />
+            Upload
           </button>
-          <img src={userLogo} alt="user logo" />
+          <img className="navbar__user-img" src={userLogo} alt="user logo" />
         </div>
       </div>
     );

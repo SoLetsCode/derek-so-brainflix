@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "avenir";
+  src: url("../assets/font/AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "avenir-demi";
+  src: url("../assets/font/AvenirNextLTPro-Demi.otf");
+}
+
+@font-face {
+  font-family: "avenir-demi";
+  src: url("../assets/font/AvenirNextLTPro-Bold.otf");
+}
+
 /* reset the page */
 html,
 body {
@@ -6,6 +21,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #323232;
+  font-family: avenir;
 }
 
 *,
@@ -26,7 +42,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 47vw;
+  height: 52.8vw;
   padding: 12px 16px 16px 16px;
 }
 
@@ -38,7 +54,7 @@ body {
   width: 100%;
   margin-bottom: 8px;
   border: 1px solid grey;
-  border-radius: 5px;
+  border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,5 +76,11 @@ body {
 
 .navbar__search-input:focus {
   outline: transparent;
+}
+
+.navbar__user-img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=App.css.map */
