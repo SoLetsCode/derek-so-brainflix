@@ -7,7 +7,7 @@
         "partials/_breakpoints.scss",
         "partials/_colors.scss",
         "partials/_Navbar.scss",
-        "partials/_VIdeo.scss"
+        "partials/_Video.scss"
     ],
     "names": [],
     "file": "App.css"
