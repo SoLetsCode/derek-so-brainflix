@@ -25,8 +25,9 @@
   &__view-like-container {
     display: flex;
     padding: 0 0 24px 0;
-    border-bottom: solid 1px $silver;
     margin: 0 0 24px 0;
+    border-bottom: solid 1px $silver;
+    height: fit-content;
   }
 
   &__view-container {
@@ -57,10 +58,50 @@
 
 @include tablet {
   .videoinfo {
-    padding: 48px 24px 40px 24px;
+    padding: 48px 24px 64px 24px;
 
     &__title {
       @include dt-font-h1;
+      margin: 0 0 24px 0;
+    }
+
+    &__author-date-view-like-container {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px $silver;
+      padding: 0 0 24px 0;
+      margin: 0 0 40px;
+    }
+
+    &__author-post-container {
+      margin: 0;
+    }
+
+    &__author {
+      @include dt-font-h3;
+    }
+
+    &__postdate {
+      @include dt-font-h3;
+    }
+
+    &__view-like-container {
+      margin: 0;
+      border: none;
+      padding: 0;
+    }
+
+    &__view-count {
+      @include dt-font-h3;
+    }
+
+    &__like-count {
+      @include dt-font-h3;
+    }
+
+    &__description {
+      @include dt-font-p;
+      width: 65vw;
     }
   }
 }

@@ -6,19 +6,21 @@ export default function VideoInformation() {
   return (
     <div className="videoinfo">
       <h1 className="videoinfo__title">BMX Rampage: 2018 Highlights</h1>
-      <div className="videoinfo__author-post-container">
-        <p className="videoinfo__author">By Red Cow</p>
-        <span className="videoinfo__postdate">12/18/2018</span>
-      </div>
-
-      <div className="videoinfo__view-like-container">
-        <div className="videoinfo__view-container">
-          <img className="videoinfo__view-img" src={viewImg} alt="" />
-          <span className="videoinfo__view-count">1,001,023</span>
+      <div className="videoinfo__author-date-view-like-container">
+        <div className="videoinfo__author-post-container">
+          <p className="videoinfo__author">By Red Cow</p>
+          <span className="videoinfo__postdate">12/18/2018</span>
         </div>
-        <div className="videoinfo__like-container">
-          <img className="videoinfo__like-img" src={likeImg} alt="" />
-          <span className="videoinfo__like-count">110,985</span>
+
+        <div className="videoinfo__view-like-container">
+          <div className="videoinfo__view-container">
+            <img className="videoinfo__view-img" src={viewImg} alt="" />
+            <span className="videoinfo__view-count">1,001,023</span>
+          </div>
+          <div className="videoinfo__like-container">
+            <img className="videoinfo__like-img" src={likeImg} alt="" />
+            <span className="videoinfo__like-count">110,985</span>
+          </div>
         </div>
       </div>
 
