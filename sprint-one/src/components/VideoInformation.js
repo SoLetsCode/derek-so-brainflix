@@ -7,8 +7,8 @@ export default function VideoInformation() {
     <div className="videoinfo">
       <h1 className="videoinfo__title">BMX Rampage: 2018 Highlights</h1>
       <div className="videoinfo__author-post-container">
-        <p className="videoinfo__author"></p>
-        <span className="videoinfo__postdate"></span>
+        <p className="videoinfo__author">By Red Cow</p>
+        <span className="videoinfo__postdate">12/18/2018</span>
       </div>
 
       <div className="videoinfo__view-like-container">

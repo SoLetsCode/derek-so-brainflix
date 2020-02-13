@@ -3,8 +3,6 @@ import "./styles/App.css";
 import Navbar from "./components/Navbar";
 import Video from "./components/Video";
 import VideoDescription from "./components/VideoDescription";
-import Comment from "./components/Comment";
-import Playlist from "./components/Playlist";
 
 //quick create component rcc + tab with ES7 React snippets (class component) rfc + tab for functional components
 
@@ -77,9 +75,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Video />
-      <VideoDescription />
-      <Comment comments={comments} />
-      <Playlist playlist={playlist} />
+      <VideoDescription comments={comments} playlist={playlist} />
     </div>
   );
 };
