@@ -51,6 +51,14 @@
     border-radius: 4px;
     background-color: $brainflix-blue-light;
     padding: 0;
+
+    &:hover {
+      background-color: $brainflix-blue-medium;
+    }
+
+    &:focus {
+      outline: transparent;
+    }
   }
 
   &__upload-img {

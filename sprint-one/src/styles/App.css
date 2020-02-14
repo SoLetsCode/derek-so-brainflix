@@ -104,6 +104,14 @@ body {
   padding: 0;
 }
 
+.navbar__search-button:hover {
+  background-color: #0065ad;
+}
+
+.navbar__search-button:focus {
+  outline: transparent;
+}
+
 .navbar__upload-img {
   margin-right: 10px;
 }
@@ -568,6 +576,12 @@ body {
     width: 20.83vw;
     margin-right: 40px;
     height: 6.5vw;
+  }
+  .comments__form-button:hover {
+    background-color: #0065ad;
+  }
+  .comments__form-button:focus {
+    outline: transparent;
   }
   .comments__card-left {
     width: auto;
