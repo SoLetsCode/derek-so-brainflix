@@ -19,7 +19,7 @@ function Playlist(props) {
   return (
     <div className="playlist">
       <h2 className="playlist__title">NEXT VIDEO</h2>
-      {playlistArray}
+      <div className="playlist__list-container">{playlistArray}</div>
     </div>
   );
 }

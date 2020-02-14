@@ -6,9 +6,13 @@ import Playlist from "./Playlist";
 function VideoDescription(props) {
   return (
     <div className="video-description">
-      <VideoInformation />
-      <Comment comments={props.comments} />
-      <Playlist playlist={props.playlist} />
+      <div className="video-description__left">
+        <VideoInformation />
+        <Comment comments={props.comments} />
+      </div>
+      <div className="video-description__right">
+        <Playlist playlist={props.playlist} />
+      </div>
     </div>
   );
 }

@@ -251,15 +251,32 @@
 
 @include desktop {
   .comments {
-    padding: 48px 180px 40px 180px;
+    padding: 48px 0 0 0;
+    width: 49vw;
 
     &__title {
       margin-bottom: 56px;
     }
 
+    &__form {
+      width: 100%;
+    }
+
     &__input-container {
-      margin-left: 276px;
-      margin-right: 276px;
+      margin: 0;
+      width: auto;
+      align-items: flex-end;
+    }
+
+    &__user-input-field {
+      width: 30vw;
+      height: 3.3vw;
+    }
+
+    &__form-button {
+      margin: 0 32px 0 0;
+      width: 100%;
+      height: 3.3vw;
     }
 
     &__image-container {
@@ -277,26 +294,12 @@
       margin-bottom: 15px;
     }
 
-    &__form {
-      width: 32vw;
-    }
-
-    &__posting-container {
-      margin-left: 276px;
-      margin-right: 276px;
-    }
-
-    &__form-button {
-      height: 48px;
-      width: 11vw;
-    }
-
     // comment section
 
     &__card {
       margin-top: 24px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     &__card-image {
@@ -306,11 +309,12 @@
     }
 
     &__card-left {
-      width: 4.5vw;
+      width: auto;
     }
 
     &__card-right {
-      width: 32vw;
+      width: auto;
+      margin: 0 32px 0 0;
     }
 
     &__card-delete-button {

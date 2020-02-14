@@ -3,6 +3,20 @@
 
   @include tablet {
     padding: 40px 24px 24px 24px;
+
+    @include desktop {
+      padding: 0 0 24px 24px;
+      height: 100%;
+    }
+  }
+
+  &__list-container {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
   }
 
   &__title {
@@ -24,6 +38,11 @@
     @include tablet {
       width: 15.6vw;
       height: 9.1vw;
+
+      @include desktop {
+        width: 8vw;
+        height: 5vw;
+      }
     }
   }
 
@@ -33,6 +52,10 @@
 
     @include tablet {
       width: 45vw;
+
+      @include desktop {
+        width: auto;
+      }
     }
   }
 

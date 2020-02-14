@@ -70,7 +70,7 @@
       justify-content: space-between;
       border-bottom: solid 1px $silver;
       padding: 0 0 24px 0;
-      margin: 0 0 40px;
+      margin: 0 0 40px 0;
     }
 
     &__author-post-container {
@@ -102,6 +102,21 @@
     &__description {
       @include dt-font-p;
       width: 65vw;
+    }
+  }
+}
+
+@include desktop {
+  .videoinfo {
+    padding: 0;
+    width: 49vw;
+
+    &__like-container {
+      margin: 0 32px 0 0;
+    }
+
+    &__description {
+      width: 36.6vw;
     }
   }
 }
