@@ -5,8 +5,11 @@ function Playlist(props) {
 
   playlistArray = props.playlist.map(item => {
     const uuidv4 = require("uuid/v4");
+    if (item.id === 0) {
+      return;
+    }
     return (
-      <div className="playlist__card" key={uuidv4()} id={uuidv4()}>
+      <div className="playlist__card" key={uuidv4()}>
         <img className="playlist__img" src={item.src} alt="beautiful" />
         <div className="playlist__text-container">
           <span className="playlist__video-title">{item.title}</span>

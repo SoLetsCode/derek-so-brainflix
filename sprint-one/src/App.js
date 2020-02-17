@@ -4,49 +4,61 @@ import Navbar from "./components/Navbar";
 import Video from "./components/Video";
 import VideoDescription from "./components/VideoDescription";
 
-//quick create component rcc + tab with ES7 React snippets (class component) rfc + tab for functional components
-
 const App = () => {
   let playlist = [
     {
       src: "http://localhost:3000/images/video-list-0.jpg",
       title: "Become A Travel Pro in One Easy Lesson",
-      author: "Scotty Cranmer"
+      author: "Scotty Cranmer",
+      id: 0
     },
     {
       src: "http://localhost:3000/images/video-list-1.jpg",
-      title: "Les Houches The Hidden Gem Of The...",
-      author: "Scotty Cranmer"
+      title: "Become A Travel Pro in One Easy Lesson",
+      author: "Scotty Cranmer",
+      id: 1
     },
     {
       src: "http://localhost:3000/images/video-list-2.jpg",
-      title: "Travel Health Useful Medical Information...",
-      author: "Scotty Cranmer"
+      title: "Les Houches The Hidden Gem Of The...",
+      author: "Scotty Cranmer",
+      id: 2
     },
     {
       src: "http://localhost:3000/images/video-list-3.jpg",
-      title: "Cheap Airline Tickets Great Ways To Save",
-      author: "Emily Harper"
+      title: "Travel Health Useful Medical Information...",
+      author: "Scotty Cranmer",
+      id: 3
     },
     {
       src: "http://localhost:3000/images/video-list-4.jpg",
-      title: "Take A Romantic Break In A Boutique Hotel",
-      author: "Ethan Owen"
+      title: "Cheap Airline Tickets Great Ways To Save",
+      author: "Emily Harper",
+      id: 4
     },
     {
       src: "http://localhost:3000/images/video-list-5.jpg",
-      title: "Choose The Perfect Accommodations",
-      author: "Lydia Perez"
+      title: "Take A Romantic Break In A Boutique Hotel",
+      author: "Ethan Owen",
+      id: 5
     },
     {
       src: "http://localhost:3000/images/video-list-6.jpg",
-      title: "Cruising Destination Ideas",
-      author: "Timothy Austin"
+      title: "Choose The Perfect Accommodations",
+      author: "Lydia Perez",
+      id: 6
     },
     {
       src: "http://localhost:3000/images/video-list-7.jpg",
+      title: "Cruising Destination Ideas",
+      author: "Timothy Austin",
+      id: 7
+    },
+    {
+      src: "http://localhost:3000/images/video-list-8.jpg",
       title: "Train Travel On Track For Safety",
-      author: "Scotty Cranmer"
+      author: "Scotty Cranmer",
+      id: 8
     }
   ];
 
@@ -74,7 +86,7 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Video />
+      <Video playlist={playlist[0]} />
       <VideoDescription comments={comments} playlist={playlist} />
     </div>
   );
