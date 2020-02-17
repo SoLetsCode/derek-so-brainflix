@@ -1,5 +1,4 @@
 import React from "react";
-import poster from "../assets/images/video-list-0.jpg";
 
 export default function Video(props) {
   return (

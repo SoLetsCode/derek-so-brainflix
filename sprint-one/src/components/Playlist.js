@@ -6,7 +6,7 @@ function Playlist(props) {
   playlistArray = props.playlist.map(item => {
     const uuidv4 = require("uuid/v4");
     if (item.id === 0) {
-      return;
+      return "";
     }
     return (
       <div className="playlist__card" key={uuidv4()}>
