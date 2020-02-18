@@ -1,0 +1,80 @@
+.playlist {
+  padding: 40px 16px 24px 16px;
+
+  @include tablet {
+    padding: 40px 24px 24px 24px;
+
+    @include desktop {
+      padding: 0 0 24px 24px;
+      height: 100%;
+    }
+  }
+
+  &__list-container {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    @include m-font-h2;
+    font-family: avenir-demi;
+    color: $silver;
+    margin: 0 0 40px 0;
+
+    @include tablet {
+      @include dt-font-h3;
+    }
+  }
+  &__img {
+    width: 37.5vw;
+    height: 21.8vw;
+    border-radius: 4px;
+    margin: 0 16px 0 0;
+
+    @include tablet {
+      width: 15.6vw;
+      height: 9.1vw;
+
+      @include desktop {
+        width: 8vw;
+        height: 5vw;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    margin: 0 0 24px 0;
+
+    @include tablet {
+      width: 45vw;
+
+      @include desktop {
+        width: auto;
+      }
+    }
+  }
+
+  &__video-title {
+    @include m-font-h2;
+    font-family: avenir-demi;
+    display: block;
+
+    @include tablet {
+      @include dt-font-h3;
+    }
+  }
+
+  &__author {
+    @include m-font-h2;
+    display: block;
+
+    @include tablet {
+      @include dt-font-h3;
+    }
+  }
+}
