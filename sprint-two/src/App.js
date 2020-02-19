@@ -1,8 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./styles/App.css";
 import Navbar from "./components/Navbar";
 import Video from "./components/Video";
 import VideoDescription from "./components/VideoDescription";
+import Upload from "./components/Upload";
 
 const App = () => {
   let playlist = [
@@ -84,11 +86,18 @@ const App = () => {
   ];
 
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <Video playlist={playlist[0]} />
-      <VideoDescription comments={comments} playlist={playlist} />
-    </div>
+      <Switch>
+        <Route path="/" exact>
+          <Video playlist={playlist[0]} />
+          <VideoDescription comments={comments} playlist={playlist} />
+        </Route>
+        <Route path="/upload">
+          <Upload />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
