@@ -178,6 +178,10 @@ body {
   height: 100%;
 }
 
+.video__video:focus {
+  outline: transparent;
+}
+
 @media only screen and (min-width: 767px) {
   .video__container {
     display: -webkit-box;

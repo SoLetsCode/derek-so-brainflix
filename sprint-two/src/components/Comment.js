@@ -2,17 +2,16 @@ import React from "react";
 import mohanImg from "../assets/images/mohan-muruge.jpg";
 
 function Comment({ comments }) {
-  const uuidv4 = require("uuid/v4");
   let commentList = comments.map(comment => {
     return (
-      <div className="comments__card" id={uuidv4()} key={uuidv4()}>
+      <div className="comments__card" id={comment.id} key={comment.id}>
         <div className="comments__card-left">
           <div className="comments__card-image" />
         </div>
         <div className="comments__card-right">
           <div className="comments__card-right-top">
             <p className="comments__card-name">{comment.name}</p>
-            <p className="comments__card-date">{comment.date}</p>
+            <p className="comments__card-date">{comment.timestamp}</p>
           </div>
           <div className="comments__card-right-bottom">
             <p className="comments__card-comment">{comment.comment}</p>
@@ -24,7 +23,7 @@ function Comment({ comments }) {
 
   return (
     <section className="comments">
-      <h1 className="comments__title">3 Comments</h1>
+      <h1 className="comments__title">{comments.length} Comments</h1>
       <div className="comments__input-container">
         <div className="comments__image-container">
           <img src={mohanImg} alt="user icon" className="comments__image" />

@@ -4,13 +4,13 @@ function Playlist(props) {
   let playlistArray = [];
 
   playlistArray = props.playlist.map(item => {
-    const uuidv4 = require("uuid/v4");
-    if (item.id === 0) {
+    if (item.id === props.currentVideoID) {
       return "";
     }
+
     return (
-      <div className="playlist__card" key={uuidv4()}>
-        <img className="playlist__img" src={item.src} alt="beautiful" />
+      <div className="playlist__card" id={item.id} key={item.id}>
+        <img className="playlist__img" src={item.image} alt={item.title} />
         <div className="playlist__text-container">
           <span className="playlist__video-title">{item.title}</span>
           <span className="playlist__author">{item.author}</span>
