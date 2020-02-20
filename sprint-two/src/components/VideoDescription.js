@@ -17,6 +17,7 @@ function VideoDescription(props) {
           <Playlist
             playlist={props.playlist}
             currentVideoID={props.currentVideoID}
+            setCurrentVideo={props.setCurrentVideo}
           />
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import image from "../assets/images/upload-video-preview.jpg";
 
-function Upload() {
+function Upload(props) {
   return (
     <div className="upload">
       <h1 className="upload__title">Upload Video</h1>

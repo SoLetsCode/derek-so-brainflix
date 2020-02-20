@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Playlist(props) {
   let playlistArray = [];
@@ -9,13 +10,20 @@ function Playlist(props) {
     }
 
     return (
-      <div className="playlist__card" id={item.id} key={item.id}>
-        <img className="playlist__img" src={item.image} alt={item.title} />
-        <div className="playlist__text-container">
-          <span className="playlist__video-title">{item.title}</span>
-          <span className="playlist__author">{item.author}</span>
+      <Link
+        className="playlist__react-link"
+        id={item.id}
+        key={item.id}
+        to={`/video/${item.id}`}
+      >
+        <div className="playlist__card">
+          <img className="playlist__img" src={item.image} alt={item.title} />
+          <div className="playlist__text-container">
+            <span className="playlist__video-title">{item.title}</span>
+            <span className="playlist__author">{item.author}</span>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   });
 

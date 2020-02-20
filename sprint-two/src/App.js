@@ -8,39 +8,24 @@ import Axios from "axios";
 
 const apiKey = "9646c732-3af7-4647-8da4-20fb64fd3c53";
 
-let comments = [
-  {
-    name: "Michael Lyons",
-    date: "12/18/2018",
-    comment:
-      "They BLEW the ROOF off at their last show, once everyone started figuring out they were going.This is still simply the greatest opening of a concert I have EVER witnessed."
-  },
-  {
-    name: "Gary Wong",
-    date: "12/12/2018",
-    comment:
-      "Every time I see him shred I feel so motivated to get off my couch and hop on my board.He’s so talented! I wish I can ride like him one day so I can really enjoy myself!"
-  },
-  {
-    name: "Theodore Duncan",
-    date: "11/15/2018",
-    comment:
-      "How can someone be so good!!! You can tell he lives for this and loves to do it every day.Everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
-  }
-];
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      playlist: [],
-      currentVideoID: "",
-      currentVideo: { comments: [] }
-    };
-  }
   state = {
     playlist: [],
-    currentVideoID: ""
+    currentVideoID: "",
+    currentVideo: { comments: [] }
+  };
+
+  setCurrentVideo = id => {
+    Axios.get(
+      `https://project-2-api.herokuapp.com/videos/${id}/?api_key=${apiKey}`
+    )
+      .then(data => {
+        this.setState({
+          currentVideoID: id,
+          currentVideo: data.data
+        });
+      })
+      .catch(error => console.log(error));
   };
 
   componentDidMount() {
@@ -64,21 +49,57 @@ class App extends Component {
       });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate fired");
+    console.log("previous props are", prevProps);
+    console.log("previous state is", prevState);
+    // if (this.props.match.params.id !== prevProps.match.params.id) {
+    //   console.log("it doesn't match!");
+    //   this.setState({
+    //     currentVideoID: renderProp.match.params.id
+    //   });
+    // }
+  }
+
   render() {
     return (
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" exact>
-            <VideoDescription
-              currentVideo={this.state.currentVideo}
-              playlist={this.state.playlist}
-              currentVideoID={this.state.currentVideoID}
-            />
-          </Route>
-          <Route path="/upload">
-            <Upload />
-          </Route>
+          <Route
+            path="/"
+            exact
+            render={renderProps => {
+              return (
+                <VideoDescription
+                  currentVideo={this.state.currentVideo}
+                  playlist={this.state.playlist}
+                  currentVideoID={this.state.currentVideoID}
+                  setCurrentVideo={this.setCurrentVideo}
+                  {...renderProps}
+                />
+              );
+            }}
+          />
+          <Route
+            path="/video/:id"
+            exact
+            render={renderProps => {
+              if (renderProps.match.params.id !== this.state.currentVideoID) {
+                this.setCurrentVideo(renderProps.match.params.id);
+              }
+              return (
+                <VideoDescription
+                  currentVideo={this.state.currentVideo}
+                  playlist={this.state.playlist}
+                  currentVideoID={this.state.currentVideoID}
+                  setCurrentVideo={this.setCurrentVideo}
+                  {...renderProps}
+                />
+              );
+            }}
+          />
+          <Route path="/upload" component={Upload} />
         </Switch>
       </Router>
     );
