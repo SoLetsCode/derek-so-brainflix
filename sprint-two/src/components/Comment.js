@@ -3,11 +3,6 @@ import mohanImg from "../assets/images/mohan-muruge.jpg";
 
 function Comment({ comments }) {
   function convertTimestampToDateString(timestamp) {
-    // 1000 ms in 1s
-    // 60,000 ms in 1min
-    // 3,600,000 ms in 1 hour
-    // 7,200,000
-    // 86,400,000 ms in 1 Day
     let timeDifference = Date.now() - timestamp;
 
     if (timeDifference < 60000) {

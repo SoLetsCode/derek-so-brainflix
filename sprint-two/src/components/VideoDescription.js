@@ -16,8 +16,7 @@ function VideoDescription(props) {
         <div className="video-description__right">
           <Playlist
             playlist={props.playlist}
-            currentVideoID={props.currentVideoID}
-            setCurrentVideo={props.setCurrentVideo}
+            currentVideoID={props.currentVideo.id}
           />
         </div>
       </div>
