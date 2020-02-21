@@ -46,7 +46,7 @@ class App extends Component {
       });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     if (this.props.match.params.id !== this.state.currentVideo.id) {
       this.setCurrentVideo(this.props.match.params.id);
     }

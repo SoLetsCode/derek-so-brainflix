@@ -122,8 +122,8 @@ body {
 }
 
 .navbar__user-img {
-  height: 48px;
-  width: 48px;
+  height: 44px;
+  width: 44px;
   border-radius: 50%;
 }
 
@@ -155,6 +155,7 @@ body {
   .navbar__upload-button {
     font-size: 14px;
     line-height: 22px;
+    margin-right: 24px;
   }
 }
 
@@ -421,6 +422,30 @@ body {
   outline: transparent;
 }
 
+.comments__user-input-field::-webkit-input-placeholder {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: avenir;
+}
+
+.comments__user-input-field:-ms-input-placeholder {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: avenir;
+}
+
+.comments__user-input-field::-ms-input-placeholder {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: avenir;
+}
+
+.comments__user-input-field::placeholder {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: avenir;
+}
+
 .comments__form-button {
   height: 50px;
   background-color: #0095ff;
@@ -547,8 +572,8 @@ body {
     margin: 0 16px 0 0;
   }
   .comments__image {
-    width: 6.5vw;
-    height: 6.5vw;
+    width: 6vw;
+    height: 6vw;
   }
   .comments__form {
     -webkit-box-orient: horizontal;
@@ -580,6 +605,22 @@ body {
     height: 6.5vw;
     width: 57vw;
     margin: 0 16px 0 0;
+  }
+  .comments__user-input-field::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .comments__user-input-field:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .comments__user-input-field::-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .comments__user-input-field::placeholder {
+    font-size: 14px;
+    line-height: 22px;
   }
   .comments__form-button {
     font-size: 16px;

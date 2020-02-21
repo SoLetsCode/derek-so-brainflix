@@ -54,6 +54,11 @@
       border: 3px solid $brainflix-blue-light;
       outline: transparent;
     }
+
+    &::placeholder {
+      @include m-font-p;
+      font-family: avenir;
+    }
   }
 
   &__form-button {
@@ -171,8 +176,8 @@
     }
 
     &__image {
-      width: 6.5vw;
-      height: 6.5vw;
+      width: 6vw;
+      height: 6vw;
     }
 
     &__form {
@@ -196,6 +201,10 @@
       height: 6.5vw;
       width: 57vw;
       margin: 0 16px 0 0;
+
+      &::placeholder {
+        @include dt-font-p;
+      }
     }
 
     &__form-button {
