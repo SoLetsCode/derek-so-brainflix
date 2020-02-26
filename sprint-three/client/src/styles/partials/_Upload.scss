@@ -1,0 +1,214 @@
+.upload {
+  padding: 24px 16px;
+
+  @include tablet {
+    padding: 48px 24px;
+  }
+
+  @include desktop {
+    padding: 48px 180px;
+  }
+
+  &__title {
+    @include m-font-h1;
+    font-family: avenir-bold;
+    margin: 0 0 32px 0;
+
+    @include tablet {
+      @include dt-font-h1;
+      border-bottom: 1px solid $silver;
+      padding: 0 0 32px 0;
+      margin: 0 0 40px 0;
+    }
+  }
+
+  &__image-form-container {
+    @include desktop {
+      display: flex;
+      border-bottom: 1px solid $silver;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__image-title {
+    @include m-font-label;
+    font-family: avenir-demi;
+    color: $silver;
+    margin: 0;
+  }
+
+  &__image-container {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 48vw;
+    border-radius: 4px;
+    margin: 0 0 32px 0;
+
+    @include tablet {
+      width: 44.8vw;
+      height: 23.8vw;
+      margin: 0 0 40 0;
+    }
+
+    @include desktop {
+      width: 23.8vw;
+      height: 12.8vw;
+      margin: 0 24px 0 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      margin: 0 0 40px 0;
+      border-bottom: 1px solid $silver;
+    }
+
+    @include desktop {
+      width: 100%;
+      border-bottom: none;
+      margin: 0;
+    }
+  }
+
+  &__video-title-label {
+    @include m-font-label;
+    font-family: avenir-demi;
+    color: $silver;
+  }
+
+  &__video-title-input {
+    font-family: avenir;
+    padding: 16px;
+    border: solid 1px $silver;
+    border-radius: 4px;
+    background-color: $alabaster;
+    margin-bottom: 24px;
+    @include m-font-p;
+
+    &:focus {
+      outline: transparent;
+    }
+
+    &::placeholder {
+      font-family: avenir;
+      @include m-font-p;
+    }
+
+    @include tablet {
+      @include dt-font-p;
+
+      &::placeholder {
+        @include dt-font-p;
+      }
+    }
+  }
+
+  &__video-description-label {
+    @include m-font-label;
+    font-family: avenir-demi;
+    color: $silver;
+  }
+
+  &__video-description-input {
+    height: 44vw;
+    font-family: avenir;
+    padding: 16px;
+    border: solid 1px $silver;
+    border-radius: 4px;
+    background-color: $alabaster;
+    margin-bottom: 32px;
+    resize: none;
+    @include m-font-p;
+
+    &:focus {
+      outline: transparent;
+    }
+
+    &::placeholder {
+      font-family: avenir;
+      @include m-font-p;
+    }
+
+    @include tablet {
+      @include dt-font-p;
+      margin-bottom: 40px;
+      max-height: 303px;
+
+      &::placeholder {
+        @include dt-font-p;
+      }
+    }
+
+    @include desktop {
+      max-height: none;
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__publish-cancel-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__publish-button {
+    @include m-font-p;
+    font-family: avenir-demi;
+    color: #ffffff;
+    background-color: $brainflix-blue-light;
+    border-radius: 4px;
+    height: 48px;
+
+    &:focus {
+      outline: transparent;
+    }
+
+    &:hover {
+      background-color: $brainflix-blue-medium;
+    }
+
+    @include tablet {
+      @include dt-font-p;
+      width: 20vw;
+      max-width: 160px;
+    }
+
+    @include desktop {
+      width: 11vw;
+      max-width: none;
+    }
+  }
+
+  &__cancel-button {
+    @include m-font-p;
+    font-family: avenir-demi;
+    color: $brainflix-blue-light;
+    background-color: none;
+    border: none;
+    border-radius: 4px;
+    height: 48px;
+
+    &:focus {
+      outline: transparent;
+    }
+
+    @include tablet {
+      @include dt-font-p;
+      margin-right: 48px;
+    }
+  }
+}

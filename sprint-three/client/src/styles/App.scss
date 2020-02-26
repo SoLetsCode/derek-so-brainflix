@@ -1,0 +1,29 @@
+@import "./partials/font";
+
+/* reset the page */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #323232;
+  font-family: avenir;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@import "./partials/typography";
+@import "./partials/breakpoints";
+@import "./partials/colors";
+@import "./partials/Navbar";
+@import "./partials/Video";
+@import "./partials/VideoDescription";
+@import "./partials/VideoInformation";
+@import "./partials/Comment";
+@import "./partials/Playlist";
+@import "./partials/Upload";
