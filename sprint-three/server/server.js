@@ -3,6 +3,7 @@ const app = express();
 
 //routes
 const videos = require("./routes/api/videos");
+const upload = require("./routes/api/upload");
 
 app.use("/api/videos", videos);
 
