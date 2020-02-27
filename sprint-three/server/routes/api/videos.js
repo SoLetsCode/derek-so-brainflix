@@ -21,15 +21,13 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   let videoId = videos.filter(video => video.id === req.params.id);
 
-  console.log(videoId);
-
   if (videoId.length === 0) {
     res
       .status(400)
-      .json({ errorMesssage: `book with id ${req.params.id} not found` });
+      .json({ errorMesssage: `video with id ${req.params.id} not found` });
   }
 
-  res.json(videoId);
+  res.json(videoId[0]);
 });
 
 module.exports = router;
