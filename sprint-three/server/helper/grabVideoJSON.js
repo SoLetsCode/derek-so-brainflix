@@ -1,3 +1,5 @@
+//helper function to create a complete JSON video file using the ID's from list.
+
 const axios = require("axios");
 const fs = require("fs");
 
