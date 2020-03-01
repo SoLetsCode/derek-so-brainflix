@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import "./styles/App.css";
-import VideoDescription from "./components/VideoDescription";
+import Navbar from "./components/Navbar";
+import CurrentVideo from "./components/CurrentVideo";
+import Upload from "./components/Upload";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Axios from "axios";
+import "./styles/App.css";
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +14,18 @@ class App extends Component {
       currentVideo: { comments: [] }
     };
   }
+
+  setPlaylist = () => {
+    Axios.get(`/api/videos`).then(data => {
+      let playlist = data.data;
+      console.log("i got ran", playlist);
+      Axios.get(`/api/videos/`).then(data => {
+        this.setState({
+          playlist: playlist
+        });
+      });
+    });
+  };
 
   setCurrentVideo = id => {
     Axios.get(`/api/videos/${id}`)
@@ -26,12 +41,8 @@ class App extends Component {
     Axios.get(`/api/videos`)
       .then(data => {
         let playlist = data.data;
-        let currentVideoID = this.props.match.params.id;
-        console.log(currentVideoID);
-        console.log("I get here");
+        let currentVideoID = data.data[0].id;
         Axios.get(`/api/videos/${currentVideoID}`).then(data => {
-          console.log(playlist);
-          console.log(data);
           this.setState({
             playlist: playlist,
             currentVideo: data.data
@@ -43,22 +54,29 @@ class App extends Component {
       });
   }
 
-  componentDidUpdate() {
-    if (this.props.match.params.id !== this.state.currentVideo.id) {
-      this.setCurrentVideo(this.props.match.params.id);
-    }
-  }
-
   render() {
     return (
-      <>
-        <VideoDescription
-          currentVideo={this.state.currentVideo}
-          playlist={this.state.playlist}
+      <Router>
+        <Navbar />
+        <Route exact path="/">
+          <Redirect to="/video/1af0jruup5gu" />
+        </Route>
+        <Route
+          path="/video/:id"
+          render={props => (
+            <CurrentVideo
+              playlist={this.state.playlist}
+              setCurrentVideo={this.setCurrentVideo}
+              currentVideo={this.state.currentVideo}
+              {...props}
+            />
+          )}
         />
-      </>
+        <Route
+          path="/upload"
+          render={props => <Upload setPlaylist={this.setPlaylist} {...props} />}
+        />
+      </Router>
     );
   }
 }
-
-export default App;
