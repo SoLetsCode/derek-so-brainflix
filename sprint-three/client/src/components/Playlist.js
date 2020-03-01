@@ -20,7 +20,7 @@ function Playlist(props) {
           <img className="playlist__img" src={item.image} alt={item.title} />
           <div className="playlist__text-container">
             <span className="playlist__video-title">{item.title}</span>
-            <span className="playlist__author">{item.author}</span>
+            <span className="playlist__author">{item.channel}</span>
           </div>
         </div>
       </Link>

@@ -3,8 +3,6 @@ import "./styles/App.css";
 import VideoDescription from "./components/VideoDescription";
 import Axios from "axios";
 
-const apiKey = "9646c732-3af7-4647-8da4-20fb64fd3c53";
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,9 +13,7 @@ class App extends Component {
   }
 
   setCurrentVideo = id => {
-    Axios.get(
-      `https://project-2-api.herokuapp.com/videos/${id}/?api_key=${apiKey}`
-    )
+    Axios.get(`/api/videos/${id}`)
       .then(data => {
         this.setState({
           currentVideo: data.data
@@ -27,14 +23,15 @@ class App extends Component {
   };
 
   componentDidMount() {
-    Axios.get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`)
+    Axios.get(`/api/videos`)
       .then(data => {
         let playlist = data.data;
         let currentVideoID = this.props.match.params.id;
-
-        Axios.get(
-          `https://project-2-api.herokuapp.com/videos/${currentVideoID}/?api_key=${apiKey}`
-        ).then(data => {
+        console.log(currentVideoID);
+        console.log("I get here");
+        Axios.get(`/api/videos/${currentVideoID}`).then(data => {
+          console.log(playlist);
+          console.log(data);
           this.setState({
             playlist: playlist,
             currentVideo: data.data
