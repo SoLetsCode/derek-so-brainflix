@@ -1,20 +1,36 @@
 import React from "react";
 import image from "../assets/images/upload-video-preview.jpg";
+import axios from "axios";
 
 function Upload(props) {
   const publishClick = event => {
     event.preventDefault();
     console.log(event.target.form);
 
-    let uploadedVideo = {
+    let uploadVideo = {
       title: event.target.form.videoTitle.value,
       channel: `Mega Mohan`,
       description: event.target.form.videoDescription.value,
       image: "https://i.imgur.com/GLUMomv.jpg"
     };
 
-    console.log(uploadedVideo);
+    console.log(uploadVideo);
+
+    axios
+      .post("/api/upload", uploadVideo)
+      .then(res => {
+        props.setPlaylist();
+        props.history.replace({ pathname: `/video/${res.data.id}` });
+      })
+      .catch(error => {
+        console.log(error);
+        throw error;
+      });
     event.target.form.reset();
+  };
+
+  const cancelClick = () => {
+    props.history.goBack();
   };
 
   return (
@@ -59,7 +75,9 @@ function Upload(props) {
         >
           PUBLISH
         </button>
-        <button className="upload__cancel-button">CANCEL</button>
+        <button className="upload__cancel-button" onClick={cancelClick}>
+          CANCEL
+        </button>
       </div>
     </div>
   );

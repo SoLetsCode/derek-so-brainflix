@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import CurrentVideo from "./components/CurrentVideo";
 import Upload from "./components/Upload";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import Axios from "axios";
+import axios from "axios";
 import "./styles/App.css";
 
 export default class App extends Component {
@@ -16,10 +16,9 @@ export default class App extends Component {
   }
 
   setPlaylist = () => {
-    Axios.get(`/api/videos`).then(data => {
+    axios.get(`/api/videos`).then(data => {
       let playlist = data.data;
-      console.log("i got ran", playlist);
-      Axios.get(`/api/videos/`).then(data => {
+      axios.get(`/api/videos/`).then(data => {
         this.setState({
           playlist: playlist
         });
@@ -28,7 +27,8 @@ export default class App extends Component {
   };
 
   setCurrentVideo = id => {
-    Axios.get(`/api/videos/${id}`)
+    axios
+      .get(`/api/videos/${id}`)
       .then(data => {
         this.setState({
           currentVideo: data.data
@@ -38,11 +38,12 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    Axios.get(`/api/videos`)
+    axios
+      .get(`/api/videos`)
       .then(data => {
         let playlist = data.data;
         let currentVideoID = data.data[0].id;
-        Axios.get(`/api/videos/${currentVideoID}`).then(data => {
+        axios.get(`/api/videos/${currentVideoID}`).then(data => {
           this.setState({
             playlist: playlist,
             currentVideo: data.data
