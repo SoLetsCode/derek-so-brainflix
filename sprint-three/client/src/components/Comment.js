@@ -1,7 +1,8 @@
 import React from "react";
 import mohanImg from "../assets/images/mohan-muruge.jpg";
+import axios from "axios";
 
-function Comment({ comments }) {
+function Comment({ comments, id, setCurrentVideo }) {
   function convertTimestampToDateString(timestamp) {
     let timeDifference = Date.now() - timestamp;
 
@@ -21,6 +22,20 @@ function Comment({ comments }) {
 
     return dateString;
   }
+
+  const commentClick = event => {
+    event.preventDefault();
+    axios
+      .post(`/api/videos/${id}/comment`, {
+        comment: event.target.usercomment.value
+      })
+      .then(res => {
+        setCurrentVideo(id);
+      })
+      .catch(err => console.log(err));
+
+    event.target.reset();
+  };
 
   let commentList = comments.map(comment => {
     return (
@@ -50,7 +65,12 @@ function Comment({ comments }) {
         <div className="comments__image-container">
           <img src={mohanImg} alt="user icon" className="comments__image" />
         </div>
-        <form action="" className="comments__form" id="comments-form">
+        <form
+          action=""
+          onSubmit={commentClick}
+          className="comments__form"
+          id="comments-form"
+        >
           <div className="comments__user-input-container">
             <label className="comments__user-input-label">
               JOIN THE CONVERSATION

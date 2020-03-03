@@ -13,6 +13,8 @@ class CurrentVideo extends Component {
       <>
         <VideoDescription
           currentVideo={this.props.currentVideo}
+          setCurrentVideo={this.props.setCurrentVideo}
+          id={this.props.match.params.id}
           playlist={this.props.playlist}
         />
       </>

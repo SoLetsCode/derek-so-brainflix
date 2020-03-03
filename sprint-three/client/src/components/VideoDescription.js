@@ -11,7 +11,11 @@ function VideoDescription(props) {
       <div className="video-description">
         <div className="video-description__left">
           <VideoInformation currentVideo={props.currentVideo} />
-          <Comment comments={props.currentVideo.comments} />
+          <Comment
+            comments={props.currentVideo.comments}
+            id={props.id}
+            setCurrentVideo={props.setCurrentVideo}
+          />
         </div>
         <div className="video-description__right">
           <Playlist
